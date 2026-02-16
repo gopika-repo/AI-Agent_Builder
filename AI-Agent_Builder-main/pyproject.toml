@@ -1,0 +1,156 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-agent-builder"
+version = "1.0.0"
+description = "Multi-Modal Document Intelligence Platform — A production-grade 6-agent AI system using LangGraph, CrewAI, YOLOv8, and Qdrant for intelligent document processing with conflict-aware fusion."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+keywords = [
+    # Agent Frameworks
+    "langgraph",
+    "crewai",
+    "langchain",
+    "multi-agent",
+    "agentic-ai",
+
+    # Computer Vision
+    "yolov8",
+    "ultralytics",
+    "opencv",
+    "computer-vision",
+
+    # LLM & AI
+    "llm",
+    "openai",
+    "anthropic",
+    "groq",
+    "llama",
+    "rag",
+    "retrieval-augmented-generation",
+
+    # OCR
+    "tesseract",
+    "easyocr",
+    "ocr",
+
+    # Vector Database
+    "qdrant",
+    "vector-database",
+    "embeddings",
+    "sentence-transformers",
+
+    # Web Framework
+    "fastapi",
+    "websockets",
+    "uvicorn",
+
+    # Document Processing
+    "document-intelligence",
+    "pdf-processing",
+    "table-extraction",
+    "multi-modal",
+
+    # Infrastructure
+    "docker",
+    "github-actions",
+    "ci-cd",
+]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Image Recognition",
+    "Topic :: Text Processing :: General",
+    "Framework :: FastAPI",
+]
+
+dependencies = [
+    # Core Framework
+    "fastapi>=0.109.0",
+    "uvicorn[standard]>=0.27.0",
+    "python-multipart>=0.0.6",
+    "websockets>=12.0",
+
+    # LangGraph & LangChain - Agent Orchestration
+    "langgraph>=0.0.40",
+    "langchain>=0.1.0",
+    "langchain-core>=0.1.0",
+    "langchain-community>=0.0.20",
+
+    # CrewAI - Multi-Agent Orchestration
+    "crewai>=0.28.0",
+    "crewai-tools>=0.1.0",
+
+    # LLM API Clients
+    "groq>=0.4.0",
+    "anthropic>=0.18.0",
+    "httpx>=0.26.0",
+    "SpeechRecognition>=3.10.0",
+
+    # Computer Vision - YOLOv8
+    "ultralytics>=8.1.0",
+    "opencv-python>=4.9.0.80",
+    "Pillow>=10.2.0",
+
+    # OCR - Dual Engine
+    "pytesseract>=0.3.10",
+    "easyocr>=1.7.1",
+
+    # PDF Processing
+    "pdf2image>=1.17.0",
+    "pdfplumber>=0.10.4",
+    "PyPDF2>=3.0.1",
+
+    # Qdrant Vector Database
+    "qdrant-client>=1.7.0",
+
+    # Embeddings & ML
+    "sentence-transformers>=2.3.1",
+    "transformers>=4.37.0",
+    "torch>=2.1.0",
+
+    # Data Processing
+    "numpy>=1.26.0",
+    "pandas>=2.2.0",
+    "scipy>=1.12.0",
+
+    # Utilities
+    "python-dotenv>=1.0.0",
+    "pydantic>=2.5.0",
+    "pydantic-settings>=2.1.0",
+    "aiofiles>=23.2.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.1.0",
+    "black>=24.1.0",
+    "isort>=5.13.0",
+    "mypy>=1.8.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/gopika-repo/AI-Agent_Builder"
+Repository = "https://github.com/gopika-repo/AI-Agent_Builder"
+Documentation = "https://github.com/gopika-repo/AI-Agent_Builder#readme"
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["backend/tests", "tests"]
+asyncio_mode = "auto"

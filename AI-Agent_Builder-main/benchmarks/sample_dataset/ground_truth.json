@@ -1,0 +1,172 @@
+{
+    "dataset_name": "DocIntel Sample Benchmark v1.0",
+    "description": "Sample ground truth dataset for evaluating the Multi-Modal Document Intelligence Pipeline. Contains labeled examples of financial reports, medical forms, and technical specifications.",
+    "version": "1.0.0",
+    "created_at": "2026-02-14",
+    "documents": [
+        {
+            "document_id": "sample_001",
+            "filename": "annual_report_2025.pdf",
+            "document_type": "financial_report",
+            "expected_text": "Annual Financial Report 2025. Revenue increased by 15% to $2.4 billion. Net income was $340 million, up from $290 million in the prior year.",
+            "expected_tables": [
+                [
+                    [
+                        "Metric",
+                        "2024",
+                        "2025"
+                    ],
+                    [
+                        "Revenue",
+                        "$2.1B",
+                        "$2.4B"
+                    ],
+                    [
+                        "Net Income",
+                        "$290M",
+                        "$340M"
+                    ],
+                    [
+                        "Employees",
+                        "12,500",
+                        "14,200"
+                    ]
+                ]
+            ],
+            "expected_regions": [
+                {
+                    "type": "title",
+                    "bbox": [
+                        50,
+                        20,
+                        550,
+                        70
+                    ],
+                    "label": "Document Title"
+                },
+                {
+                    "type": "paragraph",
+                    "bbox": [
+                        50,
+                        80,
+                        550,
+                        200
+                    ],
+                    "label": "Summary Paragraph"
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        50,
+                        220,
+                        550,
+                        420
+                    ],
+                    "label": "Key Metrics Table"
+                }
+            ],
+            "expected_entities": {
+                "revenue_2025": "$2.4 billion",
+                "net_income_2025": "$340 million",
+                "revenue_growth": "15%"
+            }
+        },
+        {
+            "document_id": "sample_002",
+            "filename": "patient_intake.pdf",
+            "document_type": "medical_form",
+            "expected_text": "Patient Intake Form. Name: Jane Smith. Date of Birth: 1985-03-15. Insurance ID: BCB-9912-XY.",
+            "expected_tables": [],
+            "expected_regions": [
+                {
+                    "type": "header",
+                    "bbox": [
+                        30,
+                        10,
+                        570,
+                        50
+                    ],
+                    "label": "Form Header"
+                },
+                {
+                    "type": "paragraph",
+                    "bbox": [
+                        30,
+                        60,
+                        570,
+                        300
+                    ],
+                    "label": "Patient Information"
+                }
+            ],
+            "expected_entities": {
+                "patient_name": "Jane Smith",
+                "date_of_birth": "1985-03-15",
+                "insurance_id": "BCB-9912-XY"
+            }
+        },
+        {
+            "document_id": "sample_003",
+            "filename": "tech_spec_v2.pdf",
+            "document_type": "technical_specification",
+            "expected_text": "Technical Specification v2.1. The system operates at 99.9% uptime with auto-scaling from 2 to 16 cores.",
+            "expected_tables": [
+                [
+                    [
+                        "Component",
+                        "Specification"
+                    ],
+                    [
+                        "CPU",
+                        "16 cores"
+                    ],
+                    [
+                        "Memory",
+                        "64 GB"
+                    ],
+                    [
+                        "Storage",
+                        "2 TB NVMe"
+                    ]
+                ]
+            ],
+            "expected_regions": [
+                {
+                    "type": "title",
+                    "bbox": [
+                        40,
+                        15,
+                        560,
+                        55
+                    ],
+                    "label": "Spec Title"
+                },
+                {
+                    "type": "paragraph",
+                    "bbox": [
+                        40,
+                        65,
+                        560,
+                        180
+                    ],
+                    "label": "Overview"
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        40,
+                        200,
+                        560,
+                        380
+                    ],
+                    "label": "Hardware Specifications"
+                }
+            ],
+            "expected_entities": {
+                "uptime": "99.9%",
+                "max_cores": "16",
+                "storage_type": "NVMe"
+            }
+        }
+    ]
+}
